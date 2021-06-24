@@ -99,3 +99,118 @@ print(requests_api.status_code) # Status code = 200 for successful, 404 and abov
 print(requests_api.headers)
 print(requests_api.content)
 ```
+# Object Oriented Programming (OOP)
+## Four Pillars of OOP
+- Abstraction: Shows only essential attributes and "hides" unnecessary information
+- Inheritance: One class acquires the property of another class
+- Encapsulation:  Bundling of data, along with the methods that operate on that data, into a single unit
+- Polymorphism: Different classes can be used with the same interface
+
+- Step 1: Create an animal.py file to create a parent class
+- Step 2: Create a file called reptile.py to abstract data and inherit from animal.py
+- Step 3: Create a file called snake.py
+- Step 4: Create a file called python.py and this point should be able to utilise inheritance from multiple classes - everything available from 
+
+## Step 1
+### Let's create an Animal class
+
+- Follow correct naming convention
+- We need to initialise with built in method called __init__(self)
+- self refers to current class
+
+```
+class Animal:
+    def __init__(self): # Declare attributes in the init method
+        self.alive = True
+        self.spine = True
+        self.eyes = True
+        self.lungs = True
+
+    def breath(self):
+        return "Keep breathing!"
+
+    def eat(self):
+        return "Time to eat!"
+
+    def move(self):
+        return "Move around!"
+```
+```
+# Create an object of the class in order to use methods
+cat = Animal() # Create object of Animal class
+print(cat.eat())
+print(snake1.use_tongue_to_smell())
+```
+## Step 2
+### Let's create reptile class to inherit Animal class
+
+- Importing Animal class. Must be in the same directory
+```
+from animal import Animal
+
+class Reptile(Animal):
+
+    def __init__(self):
+        super().__init__() # Super is used to inherit everything from the parent class
+        self.cold_blooded = True
+        self.tetrapods = None
+        self.heart_chamber = [3, 4]
+
+    def seek_heat(self):
+        return "It's chilly looking, go in the sun!"
+
+    def hunt(self):
+        return "Keep working hard to find food"
+
+    def use_venom(self):
+        return "I'll use it if i have to"
+```
+```
+# Let's create an object of Reptile class
+smart_reptile = Reptile()
+# print(smart_reptile.hunt())
+# print(smart_reptile.breath()) # Inherited from Animal class
+```
+## Step 3
+### Let's create a class called Snake
+```
+from reptile import Reptile
+
+class Snake(Reptile):
+    def __init__(self):
+        super().__init__()
+        self.forked_tongue = True
+        self.cold_blooded = True
+
+# Lets add some specific methods/behaviours
+    def use_tongue_to_smell(self):
+        return "I can smell"
+
+snake1 = Snake()
+
+# print(snake1.use_tongue_to_smell())
+```
+## Step 4
+### Let's create python class
+```
+from snake import Snake
+
+class Python(Snake):
+    def __init__(self):
+        super().__init__()
+        self.large = True
+        self.two_lungs = True
+
+    def digest_large_prey(self):
+        return "Eat fast without chewing"
+
+    def climb(self):
+        return "zooming"
+
+    def __shed_skin(self):
+        return "RIP skin"
+
+python_fast = Python()
+
+print(python_fast.climb())
+```

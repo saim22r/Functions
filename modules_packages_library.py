@@ -36,13 +36,13 @@
 # Type into terminal `pip install requests`
 # pip -v
 
-import requests
-
-requests_api = requests.get("https://www.bbc.co.uk/")
-
-if requests_api.status_code == 200:
-    print("Success")
-
-print(requests_api.status_code) # Status code = 200 for successful, 404 and above = failure
-print(requests_api.headers)
+# import requests
+#
+# requests_api = requests.get("https://www.bbc.co.uk/")
+#
+# if requests_api.status_code == 200:
+#     print("Success")
+#
+# print(requests_api.status_code) # Status code = 200 for successful, 404 and above = failure
+# print(requests_api.headers)
 # print(requests_api.content)
