@@ -106,12 +106,7 @@ print(requests_api.content)
 - Encapsulation:  Bundling of data, along with the methods that operate on that data, into a single unit
 - Polymorphism: Different classes can be used with the same interface
 
-- Step 1: Create an animal.py file to create a parent class
-- Step 2: Create a file called reptile.py to abstract data and inherit from animal.py
-- Step 3: Create a file called snake.py
-- Step 4: Create a file called python.py and this point should be able to utilise inheritance from multiple classes - everything available from 
-
-## Step 1
+## Step 1: Create an animal.py file to create a parent class
 ### Let's create an Animal class
 
 - Follow correct naming convention
@@ -135,13 +130,13 @@ class Animal:
     def move(self):
         return "Move around!"
 ```
+- Create an object of the class in order to use methods
 ```
-# Create an object of the class in order to use methods
 cat = Animal() # Create object of Animal class
 print(cat.eat())
 print(snake1.use_tongue_to_smell())
 ```
-## Step 2
+## Step 2: Create a file called reptile.py to abstract data and inherit from animal.py
 ### Let's create reptile class to inherit Animal class
 
 - Importing Animal class. Must be in the same directory
@@ -165,13 +160,14 @@ class Reptile(Animal):
     def use_venom(self):
         return "I'll use it if i have to"
 ```
+
+- Let's create an object of Reptile class
 ```
-# Let's create an object of Reptile class
 smart_reptile = Reptile()
 # print(smart_reptile.hunt())
 # print(smart_reptile.breath()) # Inherited from Animal class
 ```
-## Step 3
+## Step 3: Create a file called snake.py
 ### Let's create a class called Snake
 ```
 from reptile import Reptile
@@ -187,10 +183,9 @@ class Snake(Reptile):
         return "I can smell"
 
 snake1 = Snake()
-
-# print(snake1.use_tongue_to_smell())
+print(snake1.use_tongue_to_smell())
 ```
-## Step 4
+## Step 4: Create a file called python.py and this point should be able to utilise inheritance from multiple classes 
 ### Let's create python class
 ```
 from snake import Snake
@@ -211,6 +206,5 @@ class Python(Snake):
         return "RIP skin"
 
 python_fast = Python()
-
 print(python_fast.climb())
 ```
