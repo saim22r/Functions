@@ -1,5 +1,5 @@
 # Python OOP
-- Four Pillars of OOp
+- Four Pillars of OOP
 - Functions and good practice of functions
 
 ## First Iteration
